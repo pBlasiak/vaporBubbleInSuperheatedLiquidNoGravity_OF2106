@@ -1,0 +1,24 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.6                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+N                                      200000;      // Number of divisions for rectangulars to calculate integrals; default is 200000
+beta_g                                 4;           // Initial value of beta_g; default is 0.1
+Tinf       Tinf   [0 0  0  1 0 0 0]    374.40;      // Free stream temperature 
+R          R      [0 1  0  0 0 0 0]    50e-6;       // Initial bubble radius
+Rend       Rend   [0 1  0  0 0 0 0]    500e-6;      // Radius up to which calculations will be done
+Rsegments                              50;          // Number of segments of (Rend-R); default is 100
+
+// ************************************************************************* //
