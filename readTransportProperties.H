@@ -18,13 +18,13 @@ const label N(vaporBubbleInSuperheatedLiquidNoGravityDict.lookupOrDefault("N", 2
 dimensionedScalar beta_g("beta_g", dimless, vaporBubbleInSuperheatedLiquidNoGravityDict.lookupOrDefault("beta_g", 0.1));
 
 // Free stream temperature
-const dimensionedScalar Tinf(vaporBubbleInSuperheatedLiquidNoGravityDict.lookup("Tinf"));
+const dimensionedScalar Tinf("Tinf", dimTemperature, vaporBubbleInSuperheatedLiquidNoGravityDict);
 
 // Bubble radius
-const dimensionedScalar R(vaporBubbleInSuperheatedLiquidNoGravityDict.lookup("R"));
+const dimensionedScalar R("R", dimLength, vaporBubbleInSuperheatedLiquidNoGravityDict);
 
 // Radius up to which calculations will be performed
-const dimensionedScalar Rend(vaporBubbleInSuperheatedLiquidNoGravityDict.lookup("Rend"));
+const dimensionedScalar Rend("Rend", dimLength, vaporBubbleInSuperheatedLiquidNoGravityDict);
 
 // The number of radius segments from R to Rend
 const label Rsegments(vaporBubbleInSuperheatedLiquidNoGravityDict.lookupOrDefault("Rsegments", 100));

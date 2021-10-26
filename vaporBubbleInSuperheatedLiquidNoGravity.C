@@ -100,7 +100,7 @@ dimensionedScalar calcIntegral
 	
 	// Thickness of a rectangular
 	const scalar dksi = ( 1.0-(1-(R/r).value()) )/N;
-	scalar ksi = 0;
+	scalar ksi = 1-(R/r).value();
 	dimensionedScalar integral("integral0", dimless, 0);
 
 	for (int i = 0; i<nodes-1; i++)
@@ -149,7 +149,7 @@ int main(int argc, char *argv[])
     Info<< endl << "Liczba iteracji: " << iter << endl;
 	Info<< "beta_g = " << beta_g.value() << endl;
 
-    Info<< endl << "Obliczam analityczny rozklad temperatury... " << endl;
+    Info<< endl << "Calculating analytical temperature distribution... " << endl;
 	OFstream IFfileT("bubbleTemperature.txt");
 	IFfileT << "Radius [m]\t" << "Analytical temperature [K]" << endl;
     dimensionedScalar Tempr0("Tempr0", dimTemperature, 0);
