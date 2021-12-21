@@ -215,10 +215,20 @@ int main(int argc, char *argv[])
 		//// For linear initialization
 		//const scalar b = (Tinf.value()-TSat.value()*Rend.value()/R.value())/(1.0-Rend.value()/R.value());
 		//const scalar a = (TSat.value()-b)/R.value();
+		const scalar conv = 1e-5;
+		Tini = Tinf;
+		forAll(Tini, celli)
+		{
+			if (radius[celli] < R.value()) 
+			{
+				Tini[celli] = TSat.value();
+			}
+		}
 		forAll(Tini, celli)
 		{
 			for (int rstep=0; rstep<Rsegments+1; rstep++)
 			{
+				if (mag(Tempr[rstep]-Tinf.value()).value() < conv) continue; 
 				if (radius[celli] >= r[rstep].value() 
 				 && radius[celli] <  r[rstep+1].value() )
 				{
