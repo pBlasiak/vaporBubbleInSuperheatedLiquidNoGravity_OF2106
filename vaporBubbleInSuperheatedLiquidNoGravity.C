@@ -171,6 +171,7 @@ int main(int argc, char *argv[])
 
 	if (calcTiniAnalytical)
 	{
+		Info<< endl << "Creating Tini file in 0 directory with analytical temperature distribution... " << endl;
 		// Creating initial conditions for temperature based on analytical solution
     	volScalarField radius
     	(
@@ -198,7 +199,6 @@ int main(int argc, char *argv[])
 			);
 		}
 
-		Info<< "Creating field Tini\n" << endl;
 		volScalarField Tini
 		(
 		    IOobject
@@ -240,6 +240,7 @@ int main(int argc, char *argv[])
 		Tini.write();
 	}
 
+	Info<< "Calculating numerical and analytical radius... \n" << endl;
 	OFstream IFfile("bubbleRadius.txt");
 	IFfile << "Time [s]\t" << "Numerical [m]\t" << "Analytical [m]\t" << "Error [%]" << endl;
 
