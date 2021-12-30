@@ -26,6 +26,9 @@ const dimensionedScalar R("R", dimLength, vaporBubbleInSuperheatedLiquidNoGravit
 // Radius up to which calculations will be performed
 const dimensionedScalar Rend("Rend", dimLength, vaporBubbleInSuperheatedLiquidNoGravityDict);
 
+// Radius origin
+const dimensionedVector Rorigin("Rorigin", dimLength, vaporBubbleInSuperheatedLiquidNoGravityDict.lookupOrDefault("Rorigin", vector(0,0,0)));
+
 // The number of radius segments from R to Rend
 const label Rsegments(vaporBubbleInSuperheatedLiquidNoGravityDict.lookupOrDefault("Rsegments", 100));
 

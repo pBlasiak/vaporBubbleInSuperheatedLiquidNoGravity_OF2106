@@ -193,9 +193,9 @@ int main(int argc, char *argv[])
 		{
 			radius[celli] = Foam::sqrt
 			(
-				Foam::pow(cells[celli].component(0), 2)
-		      + Foam::pow(cells[celli].component(1), 2)
-		      + Foam::pow(cells[celli].component(2), 2)
+				Foam::pow(cells[celli].component(0) - Rorigin.component(0).value(), 2)
+		      + Foam::pow(cells[celli].component(1) - Rorigin.component(1).value(), 2)
+		      + Foam::pow(cells[celli].component(2) - Rorigin.component(2).value(), 2)
 			);
 		}
 
