@@ -269,7 +269,7 @@ int main(int argc, char *argv[])
         Info<< endl;
 
         dimensionedScalar radius("radius", dimLength, 0.0);
-	    radius = sum(mag(gradAlphal)*mesh.C().component(0))/sum(mag(gradAlphal));
+	    radius = sum(mag(gradAlphal)*mesh.C().component(gradAlphaCalcDir))/sum(mag(gradAlphal));
 
 		Info<<"Numerical value of bubble radius for time " 
 			<< runTime.timeName() 

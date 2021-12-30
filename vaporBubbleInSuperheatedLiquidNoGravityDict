@@ -20,5 +20,7 @@ Tinf       Tinf   [0 0  0  1 0 0 0]    374.40;      // Free stream temperature
 R          R      [0 1  0  0 0 0 0]    50e-6;       // Initial bubble radius
 Rend       Rend   [0 1  0  0 0 0 0]    500e-6;      // Radius up to which calculations will be done
 Rsegments                              50;          // Number of segments of (Rend-R); default is 100
+calcTiniAnalytical                     on;          // Switch if calculate analytical initial temperature; default is off
+gradAlphaCalcDir                       0;           // Component of gradAlpha; default is 0
 
 // ************************************************************************* //

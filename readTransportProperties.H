@@ -30,3 +30,6 @@ const dimensionedScalar Rend("Rend", dimLength, vaporBubbleInSuperheatedLiquidNo
 const label Rsegments(vaporBubbleInSuperheatedLiquidNoGravityDict.lookupOrDefault("Rsegments", 100));
 
 Switch calcTiniAnalytical(vaporBubbleInSuperheatedLiquidNoGravityDict.lookupOrDefault("calcTiniAnalytical", false));
+
+// The direction of gradAlpha calculation
+const label gradAlphaCalcDir(vaporBubbleInSuperheatedLiquidNoGravityDict.lookupOrDefault("gradAlphaCalcDir", 0));
